@@ -1,11 +1,10 @@
-/* Reset default browser styles */
+
 body, h1, h2, h3, p, ul, li, form, input, textarea, button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body and general layout */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -14,7 +13,7 @@ body {
   padding: 0;
 }
 
-/* Header styles */
+
 header {
   background-color: #333;
   color: #fff;
@@ -52,13 +51,13 @@ header nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* Logout button */
+
 form.logout-form {
   margin-left: auto;
 }
 
 form.logout-form button {
-  background-color: #f44336; /* Red color */
+  background-color: #f44336;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -67,10 +66,10 @@ form.logout-form button {
 }
 
 form.logout-form button:hover {
-  background-color: #dc3545; /* Darker red on hover */
+  background-color: #dc3545; 
 }
 
-/* Main styles */
+
 main {
   background-color: #fff;
   padding: 20px;
@@ -79,7 +78,7 @@ main {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Question list styles */
+
 .question-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -113,7 +112,7 @@ main {
   font-size: 0.8em;
 }
 
-/* Post question form styles */
+
 .post-question {
   margin-top: 40px;
   padding: 20px;
@@ -151,7 +150,7 @@ main {
   background-color: #0056b3;
 }
 
-/* Question details styles */
+
 .question-details {
   padding: 20px;
   background-color: #fff;
@@ -179,7 +178,7 @@ main {
   margin-bottom: 20px;
 }
 
-/* Answers section styles */
+
 .answers-section {
   margin-top: 30px;
 }
@@ -210,7 +209,7 @@ main {
   display: block;
 }
 
-/* Answer form styles */
+
 .answer-form {
   margin-top: 30px;
 }
@@ -249,7 +248,7 @@ main {
   background-color: #45a049;
 }
 
-/* Profile page specific styles */
+
 .container {
   max-width: 800px;
   margin: 0 auto;
