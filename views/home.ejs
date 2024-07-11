@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - StackOverflow Clone</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
+        
+      </ul>
+      <form class="logout-form" action="/logout" method="GET">
+        <button type="submit">Logout</button>
+      </form>
+    </nav>
+  </header>
+  
+  <main>
+    <h1>All Questions</h1>
+    <div class="question-list">
+      <% if (questions && questions.length > 0) { %>
+        <% questions.forEach(question => { %>
+          <div class="question-card">
+            <h2><a href="/questions/<%= question._id %>"><%= question.title %></a></h2>
+            <p><%= question.body %></p> 
+            <span>Posted on <%= question.updatedAt %></span>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No questions have been posted yet.</p>
+      <% } %>
+    </div>
+    
+    <div class="post-question">
+      <h2>Post a New Question</h2>
+      <form action="/questions" method="POST">
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="body" rows="5" placeholder="Body" required></textarea>
+        <button type="submit">Submit Question</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question - StackOverflow Clone</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
+       
+      </ul>
+      <form class="logout-form" action="/logout" method="GET">
+        <button type="submit">Logout</button>
+      </form>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="question-details">
+      <h1><%= question.title %></h1>
+      <p><%= question.body %></p>
+      <span>Posted on <%= question.updatedAt %></span>
+    </div>
+    
+    <div class="answers-section">
+      <h2>Answers</h2>
+      <% if (answers && answers.length > 0) { %>
+        <% answers.forEach(answer => { %>
+          <div class="answer-card">
+            <p><%= answer.body %></p>
+            <span>Posted on <%= answer.updatedAt %></span>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p>No answers yet.</p>
+      <% } %>
+    </div>
+    
+    <div class="answer-form">
+      <h2>Post an Answer</h2>
+      <form action="/questions/<%= question._id %>/answers" method="POST">
+        <textarea name="body" rows="5" placeholder="Write your answer here..." required></textarea>
+        <button type="submit">Submit Answer</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
+

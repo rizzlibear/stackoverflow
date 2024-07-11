@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
+      </ul>
+      <form class="logout-form" action="/logout" method="GET">
+        <button type="submit">Logout</button>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <h1>Welcome, <%= username %>!</h1>
+      
+      <div class="questions">
+        <h2>Your Questions</h2>
+        <% if (questions.length > 0) { %>
+          <ul>
+            <% questions.forEach(question => { %>
+              <li class="item">
+                <h3><a href="/questions/<%= question._id %>"><%= question.title %></a></h3>
+                <p><%= question.body %></p>
+              </li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p>You haven't asked any questions yet.</p>
+        <% } %>
+      </div>
+
+      <div class="answers">
+        <h2>Your Answers</h2>
+        <% if (answers.length > 0) { %>
+          <ul>
+            <% answers.forEach(answer => { %>
+              <li class="item">
+                <p><a href="/questions/<%= answer.questionId %>"></a><%= answer.body %></p>
+              </li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p>You haven't answered any questions yet.</p>
+        <% } %>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
